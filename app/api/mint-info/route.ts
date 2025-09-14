@@ -5,7 +5,7 @@ export async function GET() {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-    const response = await fetch(`${process.env.MINT_URL}/info`, {
+    const response = await fetch(`${process.env.MINT_URL}/v1/info`, {
       signal: controller.signal
     });
 
