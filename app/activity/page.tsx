@@ -25,7 +25,7 @@ export default function ActivityPage() {
       try {
         const response = await fetch('/api/system-info');
         if (!response.ok) {
-          throw new Error('Failed to fetch system information');
+          setError('Failed to fetch system information');
         }
         const data = await response.json();
         setSystemInfo(data);
@@ -70,8 +70,8 @@ export default function ActivityPage() {
                 </p>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                <div 
-                  className="bg-blue-600 h-4 rounded-full" 
+                <div
+                  className="bg-blue-600 h-4 rounded-full"
                   style={{ width: `${systemInfo.diskSpace.percentFree}%` }}
                 ></div>
               </div>
@@ -88,9 +88,9 @@ export default function ActivityPage() {
               </h5>
               <div className="relative h-40 w-40 mb-4">
                 <div className="h-40 w-40 rounded-full border-8 border-gray-200 dark:border-gray-700"></div>
-                <div 
+                <div
                   className="absolute top-0 left-0 h-40 w-40 rounded-full border-8 border-t-blue-600 border-r-blue-600 border-b-transparent border-l-transparent"
-                  style={{ 
+                  style={{
                     transform: `rotate(${(systemInfo.cpu.usage / 100) * 360}deg)`,
                     transition: 'transform 0.5s ease-in-out'
                   }}
