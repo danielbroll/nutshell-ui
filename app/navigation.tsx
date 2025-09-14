@@ -23,11 +23,11 @@ export function Navigation() {
         <NavbarLink href="/activity" active={pathname === "/activity"}>
           Activity
         </NavbarLink>
+        <NavbarLink href="/info" active={pathname === '/info'}>
+          Info
+        </NavbarLink>
         <NavbarLink href="/settings" active={pathname === "/settings"}>
           Settings
-        </NavbarLink>
-        <NavbarLink href="/about" active={pathname === '/about'}>
-          About
         </NavbarLink>
       </NavbarCollapse>
     </Navbar>
